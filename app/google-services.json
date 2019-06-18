@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "620001819416",
+    "firebase_url": "https://dizidark-f6063.firebaseio.com",
+    "project_id": "dizidark-f6063",
+    "storage_bucket": "dizidark-f6063.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620001819416:android:15772d823cff6cec",
+        "android_client_info": {
+          "package_name": "com.example.taha.dizidark01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620001819416-hpa51f4sru9oo3udd1a4gkmdjgf9a97p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.taha.dizidark01",
+            "certificate_hash": "8783c9b270b4dfdc0ed173af333fd9f7fe804081"
+          }
+        },
+        {
+          "client_id": "620001819416-1emv3lv4mdppicf0vnm8lml90oln3h0n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDifkJh8OmKK8GX_mVIDYoZUMgTdRmvd-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620001819416-1emv3lv4mdppicf0vnm8lml90oln3h0n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

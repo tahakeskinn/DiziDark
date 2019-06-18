@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeriesAdd"
+    android:orientation="vertical"
+    android:background="#101010">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2e2f41">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dizi Ekle"
+            android:textColor="#FFFFFF"
+            android:layout_centerInParent="true"
+            android:textSize="25dp"/>
+
+        <Button
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/closeicon"
+            android:onClick="exitBtn" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/selectIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="5pt"
+            android:layout_marginLeft="5pt"
+            android:layout_marginTop="5pt"
+            android:layout_marginEnd="5pt"
+            android:layout_marginRight="5pt"
+            android:layout_marginBottom="5pt"
+            android:onClick="Select"
+            app:srcCompat="@drawable/ic_launcher_background" />
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/seriesName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Dizi adı"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"/>
+
+    <EditText
+        android:id="@+id/place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Yapım yeri"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"/>
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Baslangıç yılı"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"/>
+
+    <EditText
+        android:id="@+id/kind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Dizi turu "
+        android:inputType="text"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"/>
+
+    <EditText
+        android:id="@+id/topic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Konusu"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"
+        android:maxLength="99999999"
+        android:scrollHorizontally="true"/>
+
+    <EditText
+        android:id="@+id/aPoint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Admin puanı"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"/>
+
+    <EditText
+        android:id="@+id/aComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Admin yorumu"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="#57a4ff"
+        android:onClick="addBtn"
+        android:text="Dizi ekle"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

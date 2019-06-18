@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DiziDark01</string>
+    <string name="title_activity_home">Home</string>
+    <string name="tab_text_1">ÖNE ÇIKANLAR</string>
+    <string name="tab_text_2">DİZİLER</string>
+    <string name="tab_text_3">FAVORİLER</string>
+    <string name="tab_text_4">PROFİLİM</string>
+</resources>

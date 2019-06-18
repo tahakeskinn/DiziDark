@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterAdmin"
+    android:orientation="vertical"
+    android:background="#101010">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2e2f41">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Üyelik Başlat"
+            android:textColor="#FFFFFF"
+            android:layout_centerInParent="true"
+            android:textSize="25dp"/>
+
+        <Button
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/closeicon"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:onClick="exitBtn"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/usertype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <RadioButton
+                android:id="@+id/usr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USER"
+                android:textColor="#8c8c98"
+                android:buttonTint="#8c8c98"
+                android:layout_marginTop="5dp"/>
+
+            <RadioButton
+                android:id="@+id/adm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10pt"
+                android:buttonTint="#8c8c98"
+                android:text="ADMIN"
+                android:textColor="#8c8c98" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/nameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="isim"
+            android:inputType="text"
+            android:textSize="20dp"
+            android:background="#333242"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:padding="5dp"
+            android:textColorHint="#8c8c98"
+            android:textColor="#FFF"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/surnameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Soyad"
+            android:inputType="text"
+            android:textSize="20dp"
+            android:background="#333242"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:padding="5dp"
+            android:textColorHint="#8c8c98"
+            android:textColor="#FFF"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/nicknameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kullanıcı Adı"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"/>
+
+    <EditText
+        android:id="@+id/emailEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-posta"
+        android:inputType="textEmailAddress"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"/>
+
+    <EditText
+        android:id="@+id/passEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Şifre (minimum 6 karakter)"
+        android:inputType="textPassword"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"/>
+
+    <EditText
+        android:id="@+id/passctrlEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Şifre tekrar"
+        android:inputType="textPassword"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFF"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="KAYIT OL"
+        android:textColor="#FFFFFF"
+        android:background="#57a4ff"
+        android:layout_margin="15dp"
+        android:onClick="signUp"/>
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PassForget"
+    android:orientation="vertical"
+    android:background="#101010">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2e2f41">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Şifremi Unuttum"
+            android:textColor="#FFFFFF"
+            android:layout_centerInParent="true"
+            android:textSize="25dp"/>
+
+        <Button
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/closeicon"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:onClick="exitBtn"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/logo"
+            android:layout_centerInParent="true"
+            android:layout_margin="5pt"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/mailEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-Posta"
+        android:inputType="textEmailAddress"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#8c8c98"/>
+
+    <Button
+        android:id="@+id/gonder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Onay Kodu Gonder"
+        android:textColor="#FFFFFF"
+        android:background="#57a4ff"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:onClick="sendBtn"/>
+
+</LinearLayout>

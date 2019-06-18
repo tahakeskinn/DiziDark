@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserUpdate"
+    android:orientation="vertical"
+    android:background="#101010">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2e2f41">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bilgilerimi Güncelle"
+            android:textColor="#FFFFFF"
+            android:layout_centerInParent="true"
+            android:textSize="25dp"/>
+
+        <Button
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/closeicon"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:onClick="exitBtn"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="5pt"
+            android:layout_marginLeft="5pt"
+            android:layout_marginTop="5pt"
+            android:layout_marginEnd="5pt"
+            android:layout_marginRight="5pt"
+            android:layout_marginBottom="5pt"
+            android:onClick="Select"
+            android:src="@drawable/ic_launcher_background" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/nameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="isim"
+            android:inputType="text"
+            android:textSize="20dp"
+            android:background="#333242"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:padding="5dp"
+            android:textColorHint="#8c8c98"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/surnameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Soyad"
+            android:inputType="text"
+            android:textSize="20dp"
+            android:background="#333242"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:padding="5dp"
+            android:textColorHint="#8c8c98"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/nicknameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kullanıcı Adı"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:background="#333242"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textColorHint="#8c8c98"
+        android:textColor="#FFFFFF"/>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="bilgileri güncelle"
+        android:textColor="#FFFFFF"
+        android:background="#4CAF50"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:onClick="updateBtn"/>
+
+
+</LinearLayout>
