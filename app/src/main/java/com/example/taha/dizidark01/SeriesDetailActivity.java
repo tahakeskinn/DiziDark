@@ -1,5 +1,6 @@
 package com.example.taha.dizidark01;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -26,7 +27,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
-import java.util.UUID;
 
 public class SeriesDetailActivity extends AppCompatActivity {
     TextView name, topic,place,date,kind,imdb,comment;
@@ -88,6 +88,16 @@ public class SeriesDetailActivity extends AppCompatActivity {
         //set layout
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
+    }
+
+    public void favoriteIv(View view){
+        HashMap<String, Object> Data = new HashMap<>();
+        Data.put("diziId",id);
+
+        reference.child("Favorite").child(uId).child(id).setValue(Data);
+
+        Toast.makeText(this,"favorilere eklendi.",Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -103,7 +113,7 @@ public class SeriesDetailActivity extends AppCompatActivity {
                 ) {
                     @Override
                     protected void populateViewHolder(CommentHolder viewHolder, Comment model, int position) {
-                        viewHolder.setDetails(getApplicationContext(),model.getUserId(),model.getYorum());
+                        viewHolder.setDetails(getApplicationContext(),model.getUserId(),model.getYorum(),id,model.getYorumId());
                     }
                 };
         mRecyclerView.setAdapter(firebaseRecyclerAdapter);
@@ -122,20 +132,17 @@ public class SeriesDetailActivity extends AppCompatActivity {
 
     private void addComment(String commentStr){
 
-        UUID uuid1 = UUID.randomUUID();
-        String commentId = uuid1.toString();
-
+        String commentId = reference.push().getKey();
         HashMap<String, Object> Data = new HashMap<>();
+        Data.put("yorumId",commentId);
         Data.put("userId",uId);
         Data.put("yorum",commentStr);
-        //Data.put("ProfilePhoto",downloadURL);//profil foto link
 
         reference.child("Comments").child(id).child(commentId).setValue(Data);
 
         comment.setText("");
         Toast.makeText(this,"yorum eklendi.",Toast.LENGTH_LONG).show();
     }
-
 
 
     private void seriesInfo(String id){
@@ -159,6 +166,25 @@ public class SeriesDetailActivity extends AppCompatActivity {
             }
         };
         newReference.addValueEventListener(listener);
+    }
+
+    public void exitBtn(View view){
+        if("user".equals(yetki)){
+            Intent intent = new Intent(SeriesDetailActivity.this, HomeUser.class);
+            finish();
+            startActivity(intent);
+        }
+        else if ("admin".equals(yetki)) {
+            Intent intent = new Intent(SeriesDetailActivity.this, HomeAdmin.class);
+            finish();
+            startActivity(intent);
+        }
+        else {
+            Intent intent = new Intent(SeriesDetailActivity.this, Home.class);
+            startActivity(intent);
+            finish();
+
+        }
     }
 
     @Override

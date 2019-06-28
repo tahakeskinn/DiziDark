@@ -35,7 +35,7 @@ public class SeriesAdd extends AppCompatActivity {
     DatabaseReference reference;
     FirebaseDatabase firebaseDatabase;
     StorageReference storageReference;
-    EditText diziAdi, yapimYeri,bYili,dTuru,konu,aPuan,aYorum;
+    EditText diziAdi, yapimYeri,bYili,dTuru,konu,imdb;
     ImageView imageView;
     Uri selectedImage;
 
@@ -50,8 +50,7 @@ public class SeriesAdd extends AppCompatActivity {
         bYili = findViewById(R.id.date);
         dTuru = findViewById(R.id.kind);
         konu = findViewById(R.id.topic);
-        aPuan = findViewById(R.id.aPoint);
-        aYorum = findViewById(R.id.aComment);
+        imdb = findViewById(R.id.aPoint);
 
         imageView = findViewById(R.id.selectIv);
 
@@ -67,16 +66,22 @@ public class SeriesAdd extends AppCompatActivity {
         String name = diziAdi.getText().toString();
         String place = yapimYeri.getText().toString();
         String date = bYili.getText().toString();
-        String kind = konu.getText().toString();
+        String kind = dTuru.getText().toString();
         String topic = konu.getText().toString().trim();
-        String point = aPuan.getText().toString();
-        String comment = aYorum.getText().toString();
+        String point = imdb.getText().toString();
 
-        if(TextUtils.isEmpty(name) || TextUtils.isEmpty(place) || TextUtils.isEmpty(date) || TextUtils.isEmpty(kind) || TextUtils.isEmpty(topic) || TextUtils.isEmpty(point)|| TextUtils.isEmpty(comment)){
+        if(TextUtils.isEmpty(name) || TextUtils.isEmpty(place) || TextUtils.isEmpty(date) || TextUtils.isEmpty(kind) || TextUtils.isEmpty(topic) || TextUtils.isEmpty(point)){
             Toast.makeText(SeriesAdd.this, "Alanlar boş bırakılarak kayıt işlemi yapılamaz.",Toast.LENGTH_LONG).show();
         }
         else{
-            addSeries(name,place,date,kind,topic,point,comment);
+            addSeries(name,place,date,kind,topic,point);
+            diziAdi.setText("");
+            yapimYeri.setText("");
+            bYili.setText("");
+            dTuru.setText("");
+            konu.setText("");
+            imdb.setText("");
+            dTuru.setText("");
         }
     }
 
@@ -86,7 +91,7 @@ public class SeriesAdd extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void addSeries(final String name, final String place, final String date, final String kind, final String topic, final String point, final String comment){
+    public void addSeries(final String name, final String place, final String date, final String kind, final String topic, final String point){
         UUID uuid = UUID.randomUUID();
         final String imageName = "images/"+uuid+".jpg";
 
@@ -100,21 +105,19 @@ public class SeriesAdd extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         String downloadURL = uri.toString();
 
-                        UUID uuid1 = UUID.randomUUID();
-                        String uuidString = uuid1.toString();
+                        String IdString = reference.push().getKey();
 
                         HashMap<String, Object> Data = new HashMap<>();
                         Data.put("diziAdi",name);
-                        Data.put("seriesId",uuidString);
+                        Data.put("seriesId",IdString);
                         Data.put("yapimYeri",place);
                         Data.put("turu",kind);
                         Data.put("yapimYili",date);
                         Data.put("konusu",topic);
                         Data.put("adminPuani",point);
-                        Data.put("adminYorum",comment);
                         Data.put("imageUrl",downloadURL);
 
-                        reference.child("Series").child(uuidString).setValue(Data);
+                        reference.child("Series").child(IdString).setValue(Data);
 
                         Toast.makeText(getApplicationContext(),"dizi eklendi",Toast.LENGTH_LONG).show();
 

@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.taha.dizidark01.fragment_class.FragmentFavorite;
 import com.example.taha.dizidark01.fragment_class.FragmentHome;
 import com.example.taha.dizidark01.fragment_class.FragmentProfileInfo;
 import com.example.taha.dizidark01.fragment_class.FragmentSearch;
@@ -50,7 +51,7 @@ public class HomeUser extends AppCompatActivity {
         adapter.addFragment(new FragmentSearch(),"");
         adapter.addFragment(new FragmentHome(),"ÖNE ÇIKANLAR");
         adapter.addFragment(new FragmentSeries(),"DİZİLER");
-        adapter.addFragment(new FragmentHome(),"FAVORİLER");
+        adapter.addFragment(new FragmentFavorite(),"FAVORİLER");
         adapter.addFragment(new FragmentProfileInfo(), "PROFİLİM");
         viewPager.setAdapter(adapter);
     }

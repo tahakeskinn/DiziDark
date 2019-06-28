@@ -27,19 +27,37 @@
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:background="@drawable/ic_launcher_background" >
+
         </ImageView>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/rTitleTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Series Name"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="#8c8c98"
+                android:gravity="center"
+                android:textAllCaps="true"/>
 
-        <TextView
-            android:id="@+id/rTitleTv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Series Name"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:textColor="#8c8c98"
-            android:gravity="center"/>
+        </RelativeLayout>
 
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/removeSeries"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/btn_dialog"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
 
 </android.support.v7.widget.CardView>

@@ -6,7 +6,6 @@ public class Series {
     String turu;
     String konusu;
     String adminPuani;
-    String adminYorum;
 
     public String getYapimYeri() {
         return yapimYeri;
@@ -48,11 +47,4 @@ public class Series {
         this.adminPuani = adminPuani;
     }
 
-    public String getAdminYorum() {
-        return adminYorum;
-    }
-
-    public void setAdminYorum(String adminYorum) {
-        this.adminYorum = adminYorum;
-    }
 }

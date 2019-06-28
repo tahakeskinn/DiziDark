@@ -5,12 +5,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".SeriesDetailActivity"
-    android:background="#1a1a1a">
+    android:background="#000000">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2e2f41">
+
+            <Button
+                android:id="@+id/close"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/closeicon"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:onClick="exitBtn"/>
+        </RelativeLayout>
+
 
         <ImageView
             android:id="@+id/ImageView"
@@ -42,7 +60,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"
                 app:srcCompat="@android:drawable/btn_star_big_off"
-                android:visibility="gone"/>
+                android:visibility="gone"
+                android:onClick="favoriteIv"/>
 
         </RelativeLayout>
 

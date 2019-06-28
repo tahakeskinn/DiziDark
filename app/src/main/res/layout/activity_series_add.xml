@@ -135,7 +135,7 @@
         android:id="@+id/aPoint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Admin puanı"
+        android:hint="Imdb puanı"
         android:inputType="text"
         android:textSize="20dp"
         android:background="#333242"
@@ -145,22 +145,6 @@
         android:padding="5dp"
         android:textColorHint="#8c8c98"
         android:textColor="#FFF"/>
-
-    <EditText
-        android:id="@+id/aComment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Admin yorumu"
-        android:inputType="text"
-        android:textSize="20dp"
-        android:background="#333242"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="5dp"
-        android:padding="5dp"
-        android:textColorHint="#8c8c98"
-        android:textColor="#FFF"/>
-
 
     <Button
         android:layout_width="match_parent"

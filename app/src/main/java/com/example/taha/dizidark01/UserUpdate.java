@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -33,9 +34,12 @@ public class UserUpdate extends AppCompatActivity {
     EditText nameEt, surnameEt,usernameEt,emailEt;
     ImageView imageView;
     SharedPreferences preferences;
-    String name,uName,surname,id,yetki;
+    String name,uName,surname,id,yetki,uPhoto;
     Intent intent;
-    Uri selectedImage;
+    Uri selectedImage,bosUri ;
+
+    private SharedPreferences loginPreferences;
+    private SharedPreferences.Editor loginPrefsEditor;
 
     FirebaseAuth auth;
     DatabaseReference reference;
@@ -67,11 +71,14 @@ public class UserUpdate extends AppCompatActivity {
         surname = preferences.getString("surname", "");
         id = preferences.getString("id", "");
         yetki = preferences.getString("yetki", "");
+        uPhoto = preferences.getString("uphoto", "");
 
         //set value
         nameEt.setText(name);
         surnameEt.setText(surname);
         usernameEt.setText(uName);
+        Picasso.get().load(uPhoto).into(imageView);
+
     }
 
     public void exitBtn(View view){
@@ -90,7 +97,7 @@ public class UserUpdate extends AppCompatActivity {
 
 
         if(TextUtils.isEmpty(ad) || TextUtils.isEmpty(soyad) || TextUtils.isEmpty(user)){
-            Toast.makeText(UserUpdate.this, "Alanlar boş bırakılarak kayıt işlemi yapılamaz.",Toast.LENGTH_LONG).show();
+            Toast.makeText(UserUpdate.this, "alanlar boş bırakılarak güncelleme yapılamaz.",Toast.LENGTH_LONG).show();
         }
         else{
             update(ad,soyad,user);
@@ -119,6 +126,14 @@ public class UserUpdate extends AppCompatActivity {
                         Data.put("ProfilePhoto",downloadURL);
 
                         reference.child("Users").child(id).setValue(Data);
+
+                        loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+                        loginPrefsEditor = loginPreferences.edit();
+                        loginPrefsEditor.putString("username", username);
+                        loginPrefsEditor.putString("name", name);
+                        loginPrefsEditor.putString("surname", surname);
+                        loginPrefsEditor.putString("uphoto", downloadURL);
+                        loginPrefsEditor.commit();
 
                         Toast.makeText(getApplicationContext(),"Bilgiler güncellendi.",Toast.LENGTH_LONG).show();
                     }

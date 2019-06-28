@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -30,9 +29,7 @@ public class Login extends AppCompatActivity {
 
     private SharedPreferences loginPreferences;
     private SharedPreferences.Editor loginPrefsEditor;
-    Boolean hatirla;
     EditText emailEt, passEt;
-    CheckBox rememberCb;
     String id;
 
     @Override
@@ -46,11 +43,9 @@ public class Login extends AppCompatActivity {
 
         emailEt = findViewById(R.id.mailEt);
         passEt = findViewById(R.id.sifreEt);
-        rememberCb = findViewById(R.id.rememberCb);
 
         loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         loginPrefsEditor = loginPreferences.edit();
-        hatirla = loginPreferences.getBoolean("hatirla", false);
     }
     public void exitBtn(View view){
         Intent intent = new Intent(Login.this,Home.class);
@@ -104,19 +99,16 @@ public class Login extends AppCompatActivity {
                                     User user;
                                     user = dataSnapshot.getValue(User.class);
 
-                                    if (rememberCb.isChecked()){
-                                        loginPrefsEditor.putBoolean("hatirla", true);
-                                        loginPrefsEditor.putString("id", user.getId());
-                                        loginPrefsEditor.putString("username", user.getKullaniciadi());
-                                        loginPrefsEditor.putString("name", user.getIsim());
-                                        loginPrefsEditor.putString("surname", user.getSoyad());
-                                        loginPrefsEditor.putString("yetki", user.getYetki());
-                                        loginPrefsEditor.commit();
-                                    }
-                                    else {
-                                        loginPrefsEditor.clear();
-                                        loginPrefsEditor.commit();
-                                    }
+                                    loginPrefsEditor.putBoolean("hatirla", true);
+                                    loginPrefsEditor.putString("id", user.getId());
+                                    loginPrefsEditor.putString("username", user.getKullaniciadi());
+                                    loginPrefsEditor.putString("name", user.getIsim());
+                                    loginPrefsEditor.putString("email", email);
+                                    loginPrefsEditor.putString("surname", user.getSoyad());
+                                    loginPrefsEditor.putString("yetki", user.getYetki());
+                                    loginPrefsEditor.putString("uphoto", user.getProfilePhoto());
+                                    loginPrefsEditor.commit();
+
 
                                     if("user".equals(user.getYetki())){
                                         Intent intent = new Intent(Login.this,HomeUser.class);
